@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
@@ -15,11 +16,21 @@ return new class extends Migration
     {
         Schema::create('penumpang', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 100);
-            $table->string('alamat', 100);
-            $table->string('umur', 100);
-            $table->timestamps();
+            $table->string('nama');
+            $table->string('alamat');
+            $table->string('umur');
         });
+        DB::table('penumpang')->insert(
+            array(
+                [
+                    'nama' => 'Syauqi Nur Hibatullah', 'alamat' => "bengkulu", 'umur' => "19 Tahun"
+                ],
+                [
+                    'nama' => 'Nahlin Norsalia', 'alamat' => "madiun", 'umur' => "21 Tahun"
+                ]
+            ),
+
+        );
     }
 
     /**

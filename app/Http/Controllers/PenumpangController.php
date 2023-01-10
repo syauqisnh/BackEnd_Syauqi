@@ -7,11 +7,6 @@ use Illuminate\Http\Request;
 
 class PenumpangController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         // $request all berfungsi untuk memasukkan semua request dari nama fiel
@@ -67,7 +62,7 @@ class PenumpangController extends Controller
         return response()->json(
             $data = [
                 'data' => $request->all(),
-                'mahasiswa' => $penumpang
+                'penumpang' => $penumpang
             ]
         );
     }
