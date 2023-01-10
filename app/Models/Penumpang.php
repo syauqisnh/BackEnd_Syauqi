@@ -7,10 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Penumpang extends Model
 {
-    protected $tabel = "penumpang";
-    protected $primaryKey = "id";
-    protected $fillable = [
-        'id','nama', 'alamat', 'umur'
-    ];
-
+    use HasFactory;
+    public $timestamps = false;
 }
